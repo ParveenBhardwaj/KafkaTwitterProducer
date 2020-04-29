@@ -1,0 +1,12 @@
+{
+    "Kafka":{
+        "BootstrapServersAddress" : [""],
+        "FirstTopicName" : ""
+    },
+    "Twitter":{
+        "TwitterApiKey" : "",
+        "TwitterApiSecret" : "",
+        "TwitterAccessToken" : "",
+        "TwitterAccessTokenSecret" : ""
+    }
+}
