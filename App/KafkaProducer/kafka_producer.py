@@ -8,10 +8,18 @@ class KafkaProducer():
     kafka_config = KafkaConfig()
     bootstrap_servers_address = kafka_config.bootstrap_servers_address
     first_topic_name = kafka_config.first_topic_name
+    linger_time_in_ms = 20
+    batch_size_in_bytes = 32*1024 # 32KB
 
     # Create Kafka config dictionary
     kafkaProducerConfig = {
-        'bootstrap.servers': bootstrap_servers_address[0]
+        'bootstrap.servers': bootstrap_servers_address[0],
+        # Safe Producer config
+        'enable.idempotence': "true", # Safe Producer sets Acks = all, retries.config = integer.max_value, and max_in_flight_requests = 5
+        # High throughput Producer config
+        'compression.type': 'snappy',
+        'linger.ms': str(linger_time_in_ms),
+        'message.max.bytes' : str(batch_size_in_bytes)
     }
 
     def __init__(self):
