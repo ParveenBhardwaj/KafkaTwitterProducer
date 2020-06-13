@@ -3,8 +3,8 @@ A Kafka producer that streams tweets from Twitter live, and pushes them into a K
 Written in Python.
 
 # Installation
-Install python version 3.7 or above
-Install following python libraries:
+Install python version 3.7 or above. <br>
+And Install following python libraries:
 1. tweepy
 2. confluent-kafka
 
